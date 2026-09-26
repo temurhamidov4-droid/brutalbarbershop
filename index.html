@@ -15,27 +15,15 @@
 }
 
 :root {
-    --bg: #e5dfd5;
-    --bg-light: #f7f4ee;
-
-    --white: #ffffff;
-    --cream: #f3eee5;
-
-    --black: #171717;
-    --black-soft: #292929;
-
     --text: #181818;
     --gray: #716e68;
 
     --gold: #a98248;
     --champagne: #c8a873;
-    --bronze: #8b673d;
 
     --location: #9b7440;
     --reviews: #b18a45;
     --instagram: #9b4c68;
-
-    --line: rgba(75,65,52,.16);
 }
 
 html {
@@ -82,8 +70,6 @@ body {
 }
 
 .page {
-    position: relative;
-
     width: 100%;
     max-width: 520px;
 
@@ -110,6 +96,7 @@ body {
         18px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -161,7 +148,7 @@ body {
 
     background: #1687f5;
 
-    color: white;
+    color: #fff;
 
     font-size: 11px;
 
@@ -190,12 +177,10 @@ body {
 ========================= */
 
 .main-buttons {
-
     display: grid;
 
     grid-template-columns:
-        1fr
-        1fr;
+        1fr 1fr;
 
     gap: 10px;
 
@@ -203,7 +188,6 @@ body {
 }
 
 .main-button {
-
     min-height: 58px;
 
     border-radius: 16px;
@@ -221,7 +205,7 @@ body {
 
     letter-spacing: .7px;
 
-    color: white;
+    color: #fff;
 
     background:
         linear-gradient(
@@ -248,9 +232,7 @@ body {
 }
 
 .main-button:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 17px 32px
@@ -262,13 +244,10 @@ body {
 }
 
 .main-button:active {
-
-    transform:
-        scale(.96);
+    transform: scale(.96);
 }
 
 .main-button.primary {
-
     color: #211b14;
 
     background:
@@ -298,7 +277,6 @@ body {
 ========================= */
 
 .section-title {
-
     margin-top: 35px;
 
     margin-bottom: 15px;
@@ -314,11 +292,10 @@ body {
 
 
 /* =========================
-   MENU ICONS
+   MENU
 ========================= */
 
 .highlights {
-
     display: flex;
 
     justify-content:
@@ -326,24 +303,16 @@ body {
 
     gap: 14px;
 
-    overflow-x: auto;
-
     padding:
         3px
         2px
         12px;
-
-    scrollbar-width: none;
-}
-
-.highlights::-webkit-scrollbar {
-    display: none;
 }
 
 .highlight {
+    flex: 1;
 
-    flex:
-        0 0 78px;
+    min-width: 0;
 
     text-align: center;
 
@@ -353,7 +322,6 @@ body {
 }
 
 .circle {
-
     width: 68px;
     height: 68px;
 
@@ -398,12 +366,10 @@ body {
 }
 
 
-/* LOCATION */
+/* ЛОКАЦИЯ */
 
 .highlight:nth-child(1) .circle {
-
-    color:
-        var(--location);
+    color: var(--location);
 
     border-color:
         rgba(155,116,64,.42);
@@ -418,12 +384,10 @@ body {
 }
 
 
-/* REVIEWS */
+/* ОТЗЫВЫ */
 
 .highlight:nth-child(2) .circle {
-
-    color:
-        var(--reviews);
+    color: var(--reviews);
 
     border-color:
         rgba(177,138,69,.42);
@@ -441,9 +405,7 @@ body {
 /* INSTAGRAM */
 
 .highlight:nth-child(3) .circle {
-
-    color:
-        var(--instagram);
+    color: var(--instagram);
 
     border-color:
         rgba(155,76,104,.38);
@@ -458,7 +420,6 @@ body {
 }
 
 .highlight:hover .circle {
-
     transform:
         translateY(-5px)
         scale(1.04);
@@ -473,13 +434,10 @@ body {
 }
 
 .highlight:active .circle {
-
-    transform:
-        scale(.91);
+    transform: scale(.91);
 }
 
 .highlight-name {
-
     font-size: 10px;
 
     font-weight: 600;
@@ -493,7 +451,6 @@ body {
 ========================= */
 
 .cards {
-
     display: flex;
 
     flex-direction: column;
@@ -502,7 +459,6 @@ body {
 }
 
 .card {
-
     min-height: 90px;
 
     padding: 18px;
@@ -544,9 +500,7 @@ body {
 }
 
 .card:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 16px 32px
@@ -558,13 +512,10 @@ body {
 }
 
 .card:active {
-
-    transform:
-        scale(.98);
+    transform: scale(.98);
 }
 
 .card-left {
-
     display: flex;
 
     align-items: center;
@@ -573,7 +524,6 @@ body {
 }
 
 .card-icon {
-
     width: 47px;
     height: 47px;
 
@@ -584,7 +534,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    color: white;
+    color: #fff;
 
     background:
         linear-gradient(
@@ -607,14 +557,12 @@ body {
 }
 
 .card-title {
-
     font-size: 14px;
 
     font-weight: 800;
 }
 
 .card-subtitle {
-
     margin-top: 5px;
 
     color: #77736c;
@@ -623,7 +571,6 @@ body {
 }
 
 .arrow {
-
     color: #77736c;
 
     font-size: 22px;
@@ -635,7 +582,6 @@ body {
 ========================= */
 
 .info {
-
     padding:
         17px
         18px;
@@ -659,7 +605,6 @@ body {
 }
 
 .info-row {
-
     display: flex;
 
     justify-content:
@@ -668,8 +613,7 @@ body {
     gap: 15px;
 
     padding:
-        10px
-        0;
+        10px 0;
 
     border-bottom:
         1px solid
@@ -679,26 +623,19 @@ body {
 }
 
 .info-row:last-child {
-
     border-bottom: none;
 }
 
 .info-label {
-
-    color:
-        #77736c;
+    color: #77736c;
 }
 
 .info-value {
+    color: #22201e;
 
-    color:
-        #22201e;
+    text-align: right;
 
-    text-align:
-        right;
-
-    font-weight:
-        600;
+    font-weight: 600;
 }
 
 
@@ -707,7 +644,6 @@ body {
 ========================= */
 
 .footer {
-
     margin-top: 35px;
 
     text-align: center;
@@ -727,15 +663,17 @@ body {
 @media (max-width: 360px) {
 
     .page {
-
         padding-left: 14px;
-
         padding-right: 14px;
     }
 
-    .highlights {
-
+    .main-buttons {
         gap: 8px;
+    }
+
+    .circle {
+        width: 62px;
+        height: 62px;
     }
 
 }
@@ -749,21 +687,21 @@ body {
 <div class="page">
 
 
-    <!-- LOGO -->
+    <!-- =====================
+         LOGO + PROFILE
+    ====================== -->
 
     <div class="top">
 
         <div class="logo">
 
             <img
-                src="brutal_logo_transparent.png"
+                src="brutal_logo_clean.png"
                 alt="Brutal Barbershop"
             >
 
         </div>
 
-
-        <!-- PROFILE NAME -->
 
         <div class="title">
 
@@ -792,7 +730,9 @@ body {
 
 
 
-    <!-- MAIN BUTTONS -->
+    <!-- =====================
+         MAIN BUTTONS
+    ====================== -->
 
     <div class="main-buttons">
 
@@ -816,7 +756,9 @@ body {
 
 
 
-    <!-- MENU -->
+    <!-- =====================
+         BRUTAL MENU
+    ====================== -->
 
     <div class="section-title">
         BRUTAL MENU
@@ -826,7 +768,7 @@ body {
     <div class="highlights">
 
 
-        <!-- LOCATION -->
+        <!-- ЛОКАЦИЯ -->
 
         <a
             class="highlight"
@@ -846,7 +788,7 @@ body {
 
 
 
-        <!-- REVIEWS -->
+        <!-- ОТЗЫВЫ -->
 
         <a
             class="highlight"
@@ -888,7 +830,9 @@ body {
 
 
 
-    <!-- REVIEWS -->
+    <!-- =====================
+         REVIEWS
+    ====================== -->
 
     <div class="section-title">
         ОТЗЫВЫ
@@ -898,7 +842,7 @@ body {
     <div class="cards">
 
 
-        <!-- YANDEX -->
+        <!-- YANDEX REVIEW -->
 
         <a
             class="card"
@@ -934,7 +878,7 @@ body {
 
 
 
-        <!-- GOOGLE -->
+        <!-- GOOGLE REVIEW -->
 
         <a
             class="card"
@@ -972,7 +916,9 @@ body {
 
 
 
-    <!-- CONTACTS -->
+    <!-- =====================
+         CONTACTS
+    ====================== -->
 
     <div class="section-title">
         КОНТАКТЫ
@@ -1024,7 +970,9 @@ body {
 
 
 
-    <!-- OFFICIAL WEBSITE -->
+    <!-- =====================
+         OFFICIAL WEBSITE
+    ====================== -->
 
     <div class="section-title">
         ОФИЦИАЛЬНЫЙ САЙТ
@@ -1070,7 +1018,9 @@ body {
 
 
 
-    <!-- FOOTER -->
+    <!-- =====================
+         FOOTER
+    ====================== -->
 
     <div class="footer">
 
