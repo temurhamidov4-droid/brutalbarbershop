@@ -1,133 +1,493 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Brutal Barbershop</title>
+<title>BRUTAL Barbershop</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-      min-height: 100vh;
-      background: #111111;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-      display: flex;
-      justify-content: center;
-    }
+body {
+    background: #08090b;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    .container {
-      width: 100%;
-      max-width: 480px;
-      padding: 35px 20px 40px;
-      text-align: center;
-    }
+.page {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 28px 18px 45px;
+}
 
-    .logo {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: 4px;
-      margin-bottom: 8px;
-    }
+/* TOP */
 
-    .subtitle {
-      color: #999999;
-      font-size: 14px;
-      margin-bottom: 35px;
-    }
+.top {
+    text-align: center;
+    padding-top: 8px;
+}
 
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #202020;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: 900;
+    border: 3px solid #292c30;
+    box-shadow: 0 0 0 5px #111318;
+}
 
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 58px;
-      padding: 15px 20px;
-      border-radius: 12px;
-      background: #ffffff;
-      color: #111111;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: 700;
-      transition: 0.2s;
-    }
+.logo span {
+    display: block;
+}
 
-    .button:active {
-      transform: scale(0.97);
-    }
+.title {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
 
-    .footer {
-      margin-top: 35px;
-      color: #666666;
-      font-size: 12px;
-    }
-  </style>
+.verified {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    background: #1687f5;
+    border-radius: 50%;
+    font-size: 11px;
+}
+
+.description {
+    margin-top: 8px;
+    color: #b6b8bc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.description strong {
+    color: #fff;
+}
+
+/* MAIN BUTTONS */
+
+.main-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.main-button {
+    min-height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    background: #202328;
+    border: 1px solid #2d3035;
+    transition: .2s;
+}
+
+.main-button.primary {
+    background: #fff;
+    color: #090a0c;
+}
+
+.main-button:active {
+    transform: scale(.97);
+}
+
+/* HIGHLIGHTS */
+
+.section-title {
+    margin-top: 32px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: #777b81;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+}
+
+.highlights {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 5px 2px 10px;
+    scrollbar-width: none;
+}
+
+.highlights::-webkit-scrollbar {
+    display: none;
+}
+
+.highlight {
+    flex: 0 0 72px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.circle {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #111318;
+    border: 2px solid #34373c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.highlight-name {
+    font-size: 10px;
+    color: #d1d3d6;
+}
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card {
+    min-height: 90px;
+    border-radius: 16px;
+    padding: 20px;
+    background: #111318;
+    border: 1px solid #22252a;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .2s;
+}
+
+.card:active {
+    transform: scale(.98);
+}
+
+.card-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    background: #202328;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    margin-top: 4px;
+    color: #777b81;
+    font-size: 12px;
+}
+
+.arrow {
+    color: #70747a;
+    font-size: 20px;
+}
+
+/* INFO */
+
+.info {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 15px;
+    background: #111318;
+    border: 1px solid #22252a;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 9px 0;
+    border-bottom: 1px solid #22252a;
+    font-size: 13px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #777b81;
+}
+
+.info-value {
+    color: #fff;
+    text-align: right;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    margin-top: 32px;
+    color: #555960;
+    font-size: 11px;
+    letter-spacing: .5px;
+}
+
+</style>
 </head>
 
 <body>
 
-  <main class="container">
+<div class="page">
 
-    <div class="logo">BRUTAL</div>
+    <!-- LOGO -->
+    <div class="top">
 
-    <div class="subtitle">
-      BARBERSHOP
-    </div>
+        <div class="logo">
+            <span>BRUTAL</span>
+        </div>
 
-    <div class="buttons">
+        <div class="title">
+            brutal_barbershop.13
+            <span class="verified">✓</span>
+        </div>
 
-      <a
-        class="button"
-        href="https://www.instagram.com/brutal_barbershop.13/"
-        target="_blank">
-        Instagram
-      </a>
-
-      <a
-        class="button"
-        href="https://www.brutal-barbershop.com/ru/#home"
-        target="_blank">
-        Официальный сайт
-      </a>
-
-      <a
-        class="button"
-        href="https://yandex.uz/maps/-/CXQvjRPi"
-        target="_blank">
-        Оставить отзыв в Яндекс
-      </a>
-
-      <a
-        class="button"
-        href="https://maps.app.goo.gl/QkN7aNbbb2h27q2t8"
-        target="_blank">
-        Оставить отзыв в Google
-      </a>
-
-      <a
-        class="button"
-        href="tel:+998331000101">
-        Позвонить
-      </a>
+        <div class="description">
+            Барбершоп «Брутал» · Ташкент<br>
+            <strong>Мужские стрижки · Стиль · Качество</strong>
+        </div>
 
     </div>
+
+
+    <!-- MAIN BUTTONS -->
+
+    <div class="main-buttons">
+
+        <a class="main-button primary"
+           href="https://www.brutal-barbershop.com/ru/#home"
+           target="_blank">
+            Записаться
+        </a>
+
+        <a class="main-button"
+           href="tel:+998331000101">
+            Позвонить
+        </a>
+
+    </div>
+
+
+    <!-- HIGHLIGHTS -->
+
+    <div class="section-title">
+        BRUTAL
+    </div>
+
+    <div class="highlights">
+
+        <a class="highlight"
+           href="https://yandex.uz/maps/-/CXQvjRPi"
+           target="_blank">
+            <div class="circle">📍</div>
+            <div class="highlight-name">Локация</div>
+        </a>
+
+        <a class="highlight"
+           href="https://yandex.uz/maps/-/CXQvjRPi"
+           target="_blank">
+            <div class="circle">★</div>
+            <div class="highlight-name">Отзывы</div>
+        </a>
+
+        <a class="highlight" href="#team">
+            <div class="circle">♟</div>
+            <div class="highlight-name">Команда</div>
+        </a>
+
+        <a class="highlight"
+           href="https://www.instagram.com/brutal_barbershop.13/"
+           target="_blank">
+            <div class="circle">▶</div>
+            <div class="highlight-name">Instagram</div>
+        </a>
+
+        <a class="highlight" href="#products">
+            <div class="circle">✦</div>
+            <div class="highlight-name">Косметика</div>
+        </a>
+
+        <a class="highlight" href="#sale">
+            <div class="circle">%</div>
+            <div class="highlight-name">Акция</div>
+        </a>
+
+        <a class="highlight" href="#about">
+            <div class="circle">i</div>
+            <div class="highlight-name">О нас</div>
+        </a>
+
+    </div>
+
+
+    <!-- REVIEWS -->
+
+    <div class="section-title">
+        ОТЗЫВЫ
+    </div>
+
+    <div class="cards">
+
+        <a class="card"
+           href="https://yandex.uz/maps/-/CXQvjRPi"
+           target="_blank">
+
+            <div class="card-left">
+
+                <div class="card-icon">★</div>
+
+                <div>
+                    <div class="card-title">
+                        Оставить отзыв в Яндекс
+                    </div>
+
+                    <div class="card-subtitle">
+                        Поделитесь впечатлением
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a class="card"
+           href="https://maps.app.goo.gl/QkN7aNbbb2h27q2t8"
+           target="_blank">
+
+            <div class="card-left">
+
+                <div class="card-icon">G</div>
+
+                <div>
+                    <div class="card-title">
+                        Оставить отзыв в Google
+                    </div>
+
+                    <div class="card-subtitle">
+                        Оцените наш сервис
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+    </div>
+
+
+    <!-- CONTACTS -->
+
+    <div class="section-title">
+        КОНТАКТЫ
+    </div>
+
+    <div class="info">
+
+        <div class="info-row">
+            <div class="info-label">Телефон</div>
+            <div class="info-value">+998 33 100 01 01</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Instagram</div>
+            <div class="info-value">@brutal_barbershop.13</div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-label">Время работы</div>
+            <div class="info-value">10:00 — 21:00</div>
+        </div>
+
+    </div>
+
+
+    <!-- WEBSITE -->
+
+    <div class="section-title">
+        BRUTAL BARBERSHOP
+    </div>
+
+    <div class="cards">
+
+        <a class="card"
+           href="https://www.brutal-barbershop.com/ru/#home"
+           target="_blank">
+
+            <div class="card-left">
+
+                <div class="card-icon">B</div>
+
+                <div>
+                    <div class="card-title">
+                        Официальный сайт
+                    </div>
+
+                    <div class="card-subtitle">
+                        brutal-barbershop.com
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+    </div>
+
 
     <div class="footer">
-      Brutal Barbershop · Tashkent
+        BRUTAL BARBERSHOP · TASHKENT
     </div>
 
-  </main>
+</div>
 
 </body>
 </html>
