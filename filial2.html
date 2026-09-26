@@ -1,1 +1,898 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Brutal Barbershop</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text: #181818;
+    --gray: #716e68;
+    --location: #9b7440;
+    --reviews: #b18a45;
+    --instagram: #9b4c68;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(255,255,255,.95) 0%,
+            rgba(255,255,255,.55) 23%,
+            transparent 48%
+        ),
+        radial-gradient(
+            circle at 0% 45%,
+            rgba(200,168,115,.18),
+            transparent 36%
+        ),
+        radial-gradient(
+            circle at 100% 75%,
+            rgba(139,103,61,.12),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            #eeeae2,
+            #d8d1c6
+        );
+
+    background-attachment: fixed;
+}
+
+.page {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 28px 18px 50px;
+}
+
+
+/* LOGO */
+
+.logo {
+    width: 150px;
+    height: 150px;
+
+    margin: 5px auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 12px 20px
+            rgba(40,32,22,.16)
+        );
+}
+
+
+/* PROFILE */
+
+.top {
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.description {
+    margin-top: 9px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.description strong {
+    color: #252321;
+}
+
+
+/* MAIN BUTTONS */
+
+.main-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.main-button {
+    min-height: 58px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .7px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #393939,
+            #171717
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    box-shadow:
+        0 12px 26px
+        rgba(0,0,0,.18),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.17);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 17px 32px
+        rgba(0,0,0,.22),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.2);
+}
+
+.main-button:active {
+    transform: scale(.96);
+}
+
+.main-button.primary {
+    color: #211b14;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffdf8,
+            #eadbc2 55%,
+            #c8a873
+        );
+
+    border:
+        1px solid
+        rgba(139,103,61,.35);
+
+    box-shadow:
+        0 12px 28px
+        rgba(140,104,60,.20),
+
+        inset
+        0 1px 0
+        #fff;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+    margin-top: 35px;
+    margin-bottom: 15px;
+
+    color: #77736c;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* MENU */
+
+.highlights {
+    display: flex;
+    justify-content: space-around;
+    gap: 14px;
+    padding: 3px 2px 12px;
+}
+
+.highlight {
+    flex: 1;
+    min-width: 0;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: var(--text);
+}
+
+.circle {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 8px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #e7e1d7
+        );
+
+    border:
+        1px solid
+        rgba(110,90,65,.25);
+
+    box-shadow:
+        0 10px 25px
+        rgba(60,48,35,.13),
+
+        inset
+        0 1px 0
+        #fff;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.highlight:nth-child(1) .circle {
+    color: var(--location);
+
+    border-color:
+        rgba(155,116,64,.42);
+
+    box-shadow:
+        0 10px 25px
+        rgba(155,116,64,.18),
+
+        inset
+        0 1px 0
+        #fff;
+}
+
+.highlight:nth-child(2) .circle {
+    color: var(--reviews);
+
+    border-color:
+        rgba(177,138,69,.42);
+
+    box-shadow:
+        0 10px 25px
+        rgba(177,138,69,.18),
+
+        inset
+        0 1px 0
+        #fff;
+}
+
+.highlight:nth-child(3) .circle {
+    color: var(--instagram);
+
+    border-color:
+        rgba(155,76,104,.38);
+
+    box-shadow:
+        0 10px 25px
+        rgba(155,76,104,.14),
+
+        inset
+        0 1px 0
+        #fff;
+}
+
+.highlight:hover .circle {
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 16px 32px
+        rgba(60,48,35,.20),
+
+        inset
+        0 1px 0
+        #fff;
+}
+
+.highlight:active .circle {
+    transform: scale(.91);
+}
+
+.highlight-name {
+    font-size: 10px;
+    font-weight: 600;
+    color: #55514b;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.card {
+    min-height: 90px;
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.88),
+            rgba(225,219,209,.82)
+        );
+
+    border:
+        1px solid
+        rgba(120,105,85,.20);
+
+    box-shadow:
+        0 10px 26px
+        rgba(60,48,35,.11),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.9);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 32px
+        rgba(60,48,35,.16),
+
+        inset
+        0 1px 0
+        #fff;
+}
+
+.card:active {
+    transform: scale(.98);
+}
+
+.card-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.card-icon {
+    width: 47px;
+    height: 47px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #343434,
+            #171717
+        );
+
+    font-size: 19px;
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 15px
+        rgba(0,0,0,.18),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.16);
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.card-subtitle {
+    margin-top: 5px;
+
+    color: #77736c;
+
+    font-size: 11px;
+}
+
+.arrow {
+    color: #77736c;
+    font-size: 22px;
+}
+
+
+/* CONTACTS */
+
+.info {
+    padding: 17px 18px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,.57);
+
+    border:
+        1px solid
+        rgba(100,90,75,.17);
+
+    box-shadow:
+        0 10px 25px
+        rgba(60,48,35,.08),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.8);
+}
+
+.info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 10px 0;
+
+    border-bottom:
+        1px solid
+        rgba(110,100,85,.15);
+
+    font-size: 12px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #77736c;
+}
+
+.info-value {
+    color: #22201e;
+
+    text-align: right;
+
+    font-weight: 600;
+}
+
+
+/* FOOTER */
+
+.footer {
+    margin-top: 35px;
+
+    text-align: center;
+
+    color: #77736c;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 360px) {
+
+    .page {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .main-buttons {
+        gap: 8px;
+    }
+
+    .circle {
+        width: 62px;
+        height: 62px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- LOGO -->
+
+    <div class="top">
+
+        <div class="logo">
+
+            <img
+                src="brutal_logo_clean.png"
+                alt="Brutal Barbershop"
+            >
+
+        </div>
+
+
+        <div class="title">
+            Brutal Barbershop
+        </div>
+
+
+        <div class="description">
+
+            Барбершоп · Ташкент
+
+            <br>
+
+            <strong>
+                Мужские стрижки · Стиль · Качество
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MAIN BUTTONS -->
+
+    <div class="main-buttons">
+
+        <a
+            class="main-button primary"
+            href="https://www.brutal-barbershop.com/ru/#home"
+            target="_blank"
+        >
+            ЗАПИСАТЬСЯ
+        </a>
+
+
+        <a
+            class="main-button"
+            href="tel:+998331000202"
+        >
+            ПОЗВОНИТЬ
+        </a>
+
+    </div>
+
+
+
+    <!-- MENU -->
+
+    <div class="section-title">
+        BRUTAL MENU
+    </div>
+
+
+    <div class="highlights">
+
+
+        <!-- LOCATION -->
+
+        <a
+            class="highlight"
+            href="https://yandex.uz/maps/-/CXQ0zK7W"
+            target="_blank"
+        >
+
+            <div class="circle">
+                ⌖
+            </div>
+
+            <div class="highlight-name">
+                Локация
+            </div>
+
+        </a>
+
+
+
+        <!-- REVIEWS -->
+
+        <a
+            class="highlight"
+            href="https://yandex.uz/maps/-/CXQ0zK7W"
+            target="_blank"
+        >
+
+            <div class="circle">
+                ★
+            </div>
+
+            <div class="highlight-name">
+                Отзывы
+            </div>
+
+        </a>
+
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="highlight"
+            href="https://www.instagram.com/brutal_barbershop.13/"
+            target="_blank"
+        >
+
+            <div class="circle">
+                ◎
+            </div>
+
+            <div class="highlight-name">
+                Instagram
+            </div>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- REVIEWS -->
+
+    <div class="section-title">
+        ОТЗЫВЫ
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- YANDEX -->
+
+        <a
+            class="card"
+            href="https://yandex.uz/maps/-/CXQ0zK7W"
+            target="_blank"
+        >
+
+            <div class="card-left">
+
+                <div class="card-icon">
+                    ★
+                </div>
+
+                <div>
+
+                    <div class="card-title">
+                        Оставить отзыв в Яндекс
+                    </div>
+
+                    <div class="card-subtitle">
+                        Поделитесь впечатлением
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- GOOGLE -->
+
+        <a
+            class="card"
+            href="https://maps.app.goo.gl/xexXoopZb97REUtV9"
+            target="_blank"
+        >
+
+            <div class="card-left">
+
+                <div class="card-icon">
+                    G
+                </div>
+
+                <div>
+
+                    <div class="card-title">
+                        Оставить отзыв в Google
+                    </div>
+
+                    <div class="card-subtitle">
+                        Оцените наш сервис
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- CONTACTS -->
+
+    <div class="section-title">
+        КОНТАКТЫ
+    </div>
+
+
+    <div class="info">
+
+
+        <div class="info-row">
+
+            <div class="info-label">
+                Телефон
+            </div>
+
+            <div class="info-value">
+                +998 33 100 02 02
+            </div>
+
+        </div>
+
+
+        <div class="info-row">
+
+            <div class="info-label">
+                Instagram
+            </div>
+
+            <div class="info-value">
+                @brutal_barbershop.13
+            </div>
+
+        </div>
+
+
+        <div class="info-row">
+
+            <div class="info-label">
+                Работаем
+            </div>
+
+            <div class="info-value">
+                10:00 — 21:00
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- OFFICIAL WEBSITE -->
+
+    <div class="section-title">
+        ОФИЦИАЛЬНЫЙ САЙТ
+    </div>
+
+
+    <div class="cards">
+
+        <a
+            class="card"
+            href="https://www.brutal-barbershop.com/ru/#home"
+            target="_blank"
+        >
+
+            <div class="card-left">
+
+                <div class="card-icon">
+                    B
+                </div>
+
+                <div>
+
+                    <div class="card-title">
+                        Brutal Barbershop
+                    </div>
+
+                    <div class="card-subtitle">
+                        Открыть официальный сайт
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+        BRUTAL BARBERSHOP · TASHKENT
+    </div>
+
+
+</div>
+
+</body>
+</html>
